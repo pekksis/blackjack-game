@@ -48,9 +48,10 @@ function Hand(){
 // Calculates current hand's score and changes Aces to 1 if the hand is over 21.
     this.getScore = function(){
       if(this.score > 21){
-      //Going through the hand and changing Aces to be of value 1
+      /*Going through the hand and changing Aces to be of value 1. If the score is <= 21 afterwards, it returns the score.
+        Otherwise it continues looking through the hand to see if there is another Ace*/
       for(let i = 0; i < hand.length; i++){
-        if(hand[i].value === 11) this.value = 1;
+        if(hand[i].value === 11) hand[i].value = 1;
         if(this.score <= 21) return this.score;
         }
       }
